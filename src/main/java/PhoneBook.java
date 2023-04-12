@@ -8,4 +8,8 @@ public class PhoneBook {
         phoneMap.putIfAbsent(name, phoneNumber);
         return phoneMap.size();
     }
+
+    public String findByNumber(long phoneNumber){
+        return null;
+    }
 }
