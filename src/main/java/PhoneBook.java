@@ -1,8 +1,9 @@
-import java.util.HashMap;
+import com.google.common.collect.BiMap;
+import com.google.common.collect.HashBiMap;
 
 public class PhoneBook {
 
-    private HashMap<String, Long> phoneMap = new HashMap<>();
+    private BiMap<String, Long> phoneMap = HashBiMap.create();
 
     public int add(String name, long phoneNumber){
         phoneMap.putIfAbsent(name, phoneNumber);
@@ -10,6 +11,6 @@ public class PhoneBook {
     }
 
     public String findByNumber(long phoneNumber){
-        return null;
+        return phoneMap.inverse().get(phoneNumber);
     }
 }
