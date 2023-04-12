@@ -13,4 +13,8 @@ public class PhoneBook {
     public String findByNumber(long phoneNumber){
         return phoneMap.inverse().get(phoneNumber);
     }
+
+    public Long findByName(String name){
+        return null;
+    }
 }

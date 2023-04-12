@@ -14,8 +14,7 @@ public class PhoneBookTest {
 
     }
 
-    @Test
-    public void findByNumberTest(){
+    private PhoneBook initPhoneBook(){
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Pasha", 7_965_234_87_93L);
         phoneBook.add("Masha", 7_965_214_87_93L);
@@ -23,6 +22,21 @@ public class PhoneBookTest {
         phoneBook.add("Vasya", 7_975_234_87_93L);
         phoneBook.add("Olya", 7_965_234_87_94L);
 
+        return phoneBook;
+    }
+
+    @Test
+    public void findByNumberTest(){
+        PhoneBook phoneBook = initPhoneBook();
+
         Assertions.assertEquals("Petya", phoneBook.findByNumber(7_965_234_83_93L));
+    }
+
+    @Test
+    public void findByNameTest(){
+        PhoneBook phoneBook = initPhoneBook();
+
+        Assertions.assertEquals(7_965_214_87_93L, phoneBook.findByName("Masha"));
+        Assertions.assertNull(phoneBook.findByName("Dasha"));
     }
 }
