@@ -1,6 +1,10 @@
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 public class PhoneBook {
 
     private BiMap<String, Long> phoneMap = HashBiMap.create();
@@ -16,5 +20,9 @@ public class PhoneBook {
 
     public Long findByName(String name){
         return phoneMap.get(name);
+    }
+
+    public Set<String> printAllNames(){
+        return new HashSet<>();
     }
 }

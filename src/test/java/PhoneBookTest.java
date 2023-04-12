@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 public class PhoneBookTest {
 
 
@@ -38,5 +41,24 @@ public class PhoneBookTest {
 
         Assertions.assertEquals(7_965_214_87_93L, phoneBook.findByName("Masha"));
         Assertions.assertNull(phoneBook.findByName("Dasha"));
+    }
+
+    @Test
+    public void printAllNames(){
+        PhoneBook phoneBook = initPhoneBook();
+
+        List<String> list = new ArrayList<>();
+
+        list.add("Pasha");
+        list.add("Masha");
+        list.add("Petya");
+        list.add("Vasya");
+        list.add("Olya");
+
+        list = list.stream().sorted().toList();
+
+        System.out.println(list);
+
+        Assertions.assertIterableEquals(list, phoneBook.printAllNames());
     }
 }
