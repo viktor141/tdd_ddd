@@ -15,6 +15,6 @@ public class PhoneBook {
     }
 
     public Long findByName(String name){
-        return null;
+        return phoneMap.get(name);
     }
 }
