@@ -1,6 +1,11 @@
+import java.util.HashMap;
+
 public class PhoneBook {
 
+    private HashMap<String, Long> phoneMap = new HashMap<>();
+
     public int add(String name, long phoneNumber){
-        return 0;
+        phoneMap.putIfAbsent(name, phoneNumber);
+        return phoneMap.size();
     }
 }
